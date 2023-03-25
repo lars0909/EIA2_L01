@@ -2,7 +2,7 @@
 Aufgabe: L01_Zufallsgedicht
 Name: Lars Riehle
 Matrikel: 272305
-Datum: 23.03.2023
+Datum: 25.03.2023
 Quellen: Fisher Yates Shuffle
 */
 let subjekt: string[] = ["Obi Wan ", "Anakin ", "Yoda ", "Darth Vader ", "Grogu "];
@@ -15,15 +15,19 @@ let vers: string = "";
 
 for (let i =5 ; i >= 1; i--) {
         //console.log(i); 
-        //console.log(getVerse(subjekt, prädikat, objekt));
+        console.log(getVerse(subjekt, prädikat, objekt));
 }
 
 function getVerse(_subjekt: string[], _prädikat: string[], _objekt: string[]): string {
     let rdmNum1: number = Math.floor(Math.random() * _subjekt.length);
     let rdmNum2: number = Math.floor(Math.random() * _prädikat.length);
     let rdmNum3: number = Math.floor(Math.random() * _objekt.length);
-    let test = "jesfhjdsh"
-    return(test);
+
+    let rdmSubjekt: string[] = _subjekt.splice(rdmNum1 , 1);
+    let rdmPrädikat: string[] = _prädikat.splice(rdmNum2 , 1);
+    let rdmObjekt: string[] = _objekt.splice(rdmNum3 , 1);
+    let zeile: string = rdmSubjekt[0] + rdmPrädikat[0] + rdmObjekt[0];
+    return(zeile);
 }
 
 
